@@ -19,3 +19,6 @@ pom.xml
 package-lock.json
 main.js
 main.js.LICENSE.txt
+.clj-kondo
+.lsp
+.calva/output-window/output.calva-repl

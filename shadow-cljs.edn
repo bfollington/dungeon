@@ -3,13 +3,12 @@
  :source-paths ["src" "test"]
 
  :dependencies
- [[reagent "1.1.0"]
-  [re-frame "1.2.0"]
+ [[com.pitch/uix.core "0.6.2"]
+  [com.pitch/uix.dom "0.6.2"]
   [day8.re-frame/tracing "0.6.2"]
   [applied-science/js-interop "0.2.7"]
 
-  [binaryage/devtools "1.0.3"]
-  [day8.re-frame/re-frame-10x "1.0.2"]]
+  [binaryage/devtools "1.0.3"]]
 
  :dev-http
  {8280 "resources/public"
@@ -23,9 +22,5 @@
                       :output-feature-set :es6}
    :output-dir "resources/public/js/compiled"
    :asset-path "/js/compiled"
-   :modules {:app {:init-fn racing-game-cljs.core/init}}
-   :devtools {:preloads [day8.re-frame-10x.preload]}
-   :dev {:compiler-options
-         {:closure-defines {re-frame.trace.trace-enabled? true
-                            day8.re-frame.tracing.trace-enabled? true}}}
-   :release {:build-options {:ns-aliases {day8.re-frame.tracing day8.re-frame.tracing-stubs}}}}}}
+   :devtools {:preloads [dungeon.preload]}
+   :modules {:app {:init-fn dungeon.core/init}}}}}
